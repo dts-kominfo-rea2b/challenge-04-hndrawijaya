@@ -8,7 +8,21 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, idx) => {
+    if (idx != null){
+      const datesInSecond = (Date.parse(dates[idx]))/1000;
+      return datesInSecond.toString();
+    }else{
+      let arrayDate = [];
+      for(let i=0; i<dates.length;i++){
+        let datesInSecond = (Date.parse(dates[i])/1000);
+        arrayDate.push(datesInSecond);
+      }
+      const sortDate = (arrayDate.sort()).join("-");
+
+      return sortDate;
+    }
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
